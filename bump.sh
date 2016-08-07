@@ -38,4 +38,5 @@ case $what_to_bump in
     ;;
 esac
 
+echo "$what_to_bump bump"
 echo "$major.$minor.$patch" > $version_file

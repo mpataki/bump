@@ -9,8 +9,8 @@ def usage_message(status = 1)
   exit status
 end
 
-level = ARGV[0]
-usage_message if level.nil?
+what_to_bump = ARGV[0]
+usage_message if what_to_bump.nil?
 
 version_file = ARGV[1] || 'VERSION'
 version = File.read(version_file).split('.') rescue usage_message
@@ -20,9 +20,9 @@ version.map! do |v|
   Integer(v) rescue usage_message
 end
 
-index = ['major', 'minor', 'patch'].find_index(level)
+index = ['major', 'minor', 'patch'].find_index(what_to_bump)
 usage_message if index.nil?
 
-puts "#{level} bump"
+puts "#{what_to_bump} bump"
 version[index] += 1
 File.write(version_file, version.join('.'))

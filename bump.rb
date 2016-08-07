@@ -2,11 +2,10 @@
 
 def usage_message(status = 1)
   puts "usage:\n" \
-       "\n" \
-       "bump {major|minor|patch} [version_file_name]\n" \
-       "\t- version_file_name default = 'VERION'\n" \
-       "\t- version file ex:\n" \
-       "\t\t0.0.0"
+       "\t./bump {major|minor|patch} [version_file_name]\n\n" \
+       " - version_file_name default = 'VERION'\n" \
+       " - version file ex:\n" \
+       " \t0.0.0"
   exit status
 end
 

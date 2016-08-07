@@ -2,7 +2,10 @@
 
 show_usage() {
   echo "Usage:"
-  printf "\t./bump {major|minor|patch}"
+  printf "\t./bump {major|minor|patch} [version_file_name]\n\n"
+  printf " - version_file_name default = 'VERION'\n"
+  printf " - version file ex:\n"
+  printf " \t0.0.0\n"
 }
 
 what_to_bump=$1

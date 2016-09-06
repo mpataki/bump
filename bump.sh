@@ -25,9 +25,12 @@ fi
 case $what_to_bump in
   major)
     ((major++))
+    minor=0
+    patch=0
     ;;
   minor)
     ((minor++))
+    patch=0
     ;;
   patch)
     ((patch++))

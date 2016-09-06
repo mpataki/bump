@@ -3,7 +3,7 @@
 def usage_message(status = 1)
   puts "usage:\n" \
        "\t./bump {major|minor|patch} [version_file_name]\n\n" \
-       " - version_file_name default = 'VERION'\n" \
+       " - version_file_name default = 'VERSION'\n" \
        " - version file ex:\n" \
        " \t0.0.0"
   exit status
@@ -25,4 +25,5 @@ usage_message if index.nil?
 
 puts "#{what_to_bump} bump"
 version[index] += 1
+((index + 1)..2).each { |i| version[i] = 0 }
 File.write(version_file, version.join('.'))
